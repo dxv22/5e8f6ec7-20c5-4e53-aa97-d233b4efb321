@@ -1,4 +1,4 @@
-﻿using LongestIncreasingSubsequence;
+using LongestIncreasingSubsequence;
 
 if (args.Length > 1)
 {

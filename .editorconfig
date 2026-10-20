@@ -1,0 +1,27 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+[*.{csproj,props,json,yml,yaml}]
+indent_size = 2
+
+[*.cs]
+csharp_style_namespace_declarations = file_scoped:warning
+dotnet_analyzer_diagnostic.category-Style.severity = warning
+dotnet_analyzer_diagnostic.category-Maintainability.severity = warning
+
+# Implicit var is used throughout; do not force explicit types.
+dotnet_diagnostic.IDE0008.severity = none
+
+# Assert.Throws returns the exception; tests do not need to use it.
+dotnet_diagnostic.IDE0058.severity = none
+
+# Test method names use Method_Scenario_Expected, so underscores are intentional.
+[tests/**/*.cs]
+dotnet_diagnostic.CA1707.severity = none

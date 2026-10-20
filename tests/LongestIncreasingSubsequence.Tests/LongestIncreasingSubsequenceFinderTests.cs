@@ -4,7 +4,7 @@ namespace LongestIncreasingSubsequence.Tests;
 
 public class LongestIncreasingSubsequenceFinderTests
 {
-    public static TheoryData<int> ProvidedCaseNumbers => new(Enumerable.Range(1, 11));
+    public static TheoryData<int> ProvidedCaseNumbers => [.. Enumerable.Range(1, 11)];
 
     [Theory]
     [MemberData(nameof(ProvidedCaseNumbers))]
