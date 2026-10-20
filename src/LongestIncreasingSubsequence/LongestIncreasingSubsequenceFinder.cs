@@ -30,7 +30,7 @@ public static class LongestIncreasingSubsequenceFinder
         {
             if (!int.TryParse(tokens[i], NumberStyles.Integer, CultureInfo.InvariantCulture, out numbers[i]))
             {
-                throw new ArgumentException($"'{tokens[i]}' is not a valid 32-bit integer.", nameof(input));
+                throw new ArgumentException($"'{tokens[i]}' is not a valid 32-bit integer.");
             }
         }
 
