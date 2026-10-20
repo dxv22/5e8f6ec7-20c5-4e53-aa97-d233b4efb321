@@ -49,3 +49,20 @@ jobs:
         with:
           name: coverage-report
           path: coverage-report
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Run tests inside Docker
+        run: docker build --target test .
+
+      - name: Build image
+        run: docker build --tag lis-app .
+
+      - name: Smoke test image
+        run: |
+          output="$(docker run --rm lis-app "6 1 5 9 2")"
+          echo "Output: $output"
+          test "$output" = "1 5 9"
